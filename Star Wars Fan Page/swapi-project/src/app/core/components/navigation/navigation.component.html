@@ -1,0 +1,146 @@
+<nav id="my-nav" class="relative mx-auto">
+  <nav id="my-nav" class="relative mx-auto p-6">
+    <div class="flex items-center justify-between">
+      <a class="text-4xl text-white" routerLink="/">Star Wars App</a>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white" (click)="toggleMobileMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <ul class="hidden md:flex space-x-6 text-2xl text-white" id="nav-links">
+        <li
+          class="cursor-pointer hover:text-darkGrayishBlue transition duration-300 ease-in-out accordion hover:translate-y-[-2px]"
+        >
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li
+          class="cursor-pointer hover:text-darkGrayishBlue transition duration-300 ease-in-out accordion hover:translate-y-[-2px]"
+        >
+          <a
+            routerLink="/people"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >People</a
+          >
+        </li>
+        <li
+          class="cursor-pointer hover:text-darkGrayishBlue transition duration-300 ease-in-out accordion hover:translate-y-[-2px]"
+        >
+          <a
+            routerLink="/ships"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Ships</a
+          >
+        </li>
+        <li
+          class="cursor-pointer hover:text-darkGrayishBlue transition duration-300 ease-in-out accordion hover:translate-y-[-2px]"
+        >
+          <a
+            routerLink="/planets"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Planets</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Mobile dropdown menu -->
+
+    <div
+      class="md:hidden fixed inset-0 z-50 bg-black backdrop-blur-md"
+      *ngIf="isMobileMenuOpen"
+    >
+      <div class="flex items-center justify-end p-4">
+        <button class="text-white" (click)="toggleMobileMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex justify-center mt-[300px]">
+        <ul class="text-2xl text-white">
+          <li
+            class="cursor-pointer hover:text-darkGrayishBlue animate-fade-right animate-duration-[2000ms]"
+          >
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li
+            class="cursor-pointer hover:text-darkGrayishBlue mt-[20px] animate-fade-right animate-duration-[4000ms]"
+          >
+            <a
+              routerLink="/people"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >People</a
+            >
+          </li>
+          <li
+            class="cursor-pointer hover:text-darkGrayishBlue mt-[20px] animate-fade-right animate-duration-[6000ms]"
+          >
+            <a
+              routerLink="/ships"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Ships</a
+            >
+          </li>
+          <li
+            class="cursor-pointer hover:text-darkGrayishBlue mt-[20px] animate-fade-right animate-duration-[8000ms]"
+          >
+            <a
+              routerLink="/planets"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Planets</a
+            >
+          </li>
+          <li
+            class="cursor-pointer hover:text-darkGrayishBlue mt-[20px] animate-fade-right animate-duration-[10000ms]"
+          >
+            <a
+              routerLink="/about"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >About</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</nav>

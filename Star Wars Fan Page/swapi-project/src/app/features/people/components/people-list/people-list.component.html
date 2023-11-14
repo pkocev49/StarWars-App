@@ -1,0 +1,90 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section class="mt-[30px]">
+    <div class="flex justify-center items-center mb-[20px]">
+      <h1
+        class="text-white text-[19px] font-bold flex justify-center items-center sm:text-[24px] md:text-[28px] xl:text-[38px]"
+      >
+        People of the Star Wars Universe
+      </h1>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center p-5 md:p-10 xl:flex-row xl:justify-evenly"
+    >
+      <div class="xl:w-1/2 animate-fade-right animate-duration-[2000ms]">
+        <p
+          class="text-white text-1xl mb-10 md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          Welcome to the heart of our Star Wars fan community - the "People"
+          section, where we delve into the rich tapestry of characters that make
+          this galaxy far, far away truly legendary. From Jedi Knights to Sith
+          Lords, droids to Wookiees, and everything in between, Star Wars has
+          introduced us to a diverse array of characters who have left an
+          indelible mark on the franchise's lore.
+        </p>
+
+        <p
+          class="text-white text-1xl md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          Here, we celebrate the iconic and beloved characters who have defined
+          the Star Wars saga. Explore their backstories, roles, and the actors
+          who brought them to life on the big screen. Whether you're a lifelong
+          fan or a newcomer to this epic space opera, our "People" section is
+          your gateway to the fascinating individuals who have shaped the
+          destiny of the galaxy.
+        </p>
+      </div>
+      <div class="animate-fade-left animate-duration-[2000ms]">
+        <img
+          class="w-[300px] rounded-[20px] p-[20px] sm:w-[400px] lg:w-[450px] xl:w-[500px] 4xl:w-[600px]"
+          src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/star-wars-episode-7/b/b9/Stormtrooper.jpg"
+          alt="img"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="mt-[600px] mb-[200px]">
+    <div class="p-5">
+      <h1 class="text-white text-2xl font-bold text-center sm:text-3xl">
+        Browse the Characters of The Star Wars World
+      </h1>
+    </div>
+    <div class="flex justify-center items-center mt-[20px]">
+      <input
+        class="text-white w-[300px] bg-transparent border-[1px] p-[10px] rounded-xl sm:w-[550px] lg:w-[700px] xl:p-[13px] 2xl:w-[900px] 8xl:w-[1200px]"
+        type="text"
+        (keyup)="filterPeople(searchInput.value)"
+        #searchInput
+        placeholder="Search People"
+      />
+    </div>
+
+    <div class="flex justify-center items-center">
+      <div class="flex flex-wrap justify-evenly items-center p-5 w-[1700px]">
+        <app-people-card
+          *ngFor="let person of filteredPeople"
+          [person]="person"
+        ></app-people-card>
+      </div>
+    </div>
+
+    <div class="mt-[20px] flex justify-center items-center">
+      <button
+        [disabled]="pageNumber === 1"
+        (click)="previousPage()"
+        class="previous"
+      >
+        Previous
+      </button>
+      <button [disabled]="pageNumber === 9" (click)="nextPage()" class="next">
+        Next
+      </button>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

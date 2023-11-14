@@ -1,0 +1,58 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section id="personCard" class="mt-20">
+    <div
+      class="mt-[150px] flex justify-center m-5 animate-fade-top animate-duration-[2000ms]"
+    >
+      <div
+        *ngFor="let ship of shipsData"
+        class="animate-fade-right animate-duration-[2000ms] flex flex-col justify-center border-2 border-white rounded-xl p-10 w-[350px] sm:w-[600px] sm:flex-row sm:justify-evenly lg:w-[700px] xl:w-[800px] 2xl:w-[1000px] 2xl:h-[250px] 4xl:h-[300px] 16xl:w-[1500px] 16xl:h-[300px]"
+      >
+        <div>
+          <h1 class="text-white text-1xl 4xl:text-3xl font-bold">
+            Name:{{ ship.name }}
+          </h1>
+
+          <p class="text-white text-1xl 4xl:text-2xl">Model:{{ ship.model }}</p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Cost:{{ ship.cost_in_credits }}credits
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Length:{{ ship.length }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Max speed:{{ ship.max_atmosphering_speed }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">Crew:{{ ship.crew }}</p>
+        </div>
+        <div class="sm:w-[2px] sm:h-[100%] sm:bg-white"></div>
+        <hr class="border-[1.5px] sm:hidden" />
+        <div>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Passengers:{{ ship.passengers }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Cargo Capacity:{{ ship.cargo_capacity }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Consumables:{{ ship.consumables }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Hyperdrive Rating:{{ ship.hyperdrive_rating }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">MGLT:{{ ship.MGLT }}</p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Starship Class:{{ ship.starship_class }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Created On:{{ ship.created | date }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

@@ -1,0 +1,81 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section
+    id="personCard"
+    class="mt-20 animate-fade-right animate-duration-[2000ms]"
+  >
+    <div class="flex justify-center md:justify-start m-5">
+      <div
+        *ngFor="let hw of planetData"
+        class="flex flex-col justify-center border-2 border-white rounded-xl p-10 w-[350px] sm:w-[600px] sm:flex-row sm:justify-evenly lg:w-[700px] xl:w-[800px] 2xl:w-[1000px] 2xl:h-[250px] 16xl:w-[1500px] 16xl:h-[300px]"
+      >
+        <div>
+          <h1 class="text-white font-bold text-[19px] 4xl:text-2xl">
+            Name:{{ hw.name }}
+          </h1>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Rotation Period:{{ hw.rotation_period }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Orbital Period:{{ hw.orbital_period }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Diameter:{{ hw.diameter }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Climate:{{ hw.climate }}
+          </p>
+        </div>
+        <div class="sm:w-[2px] sm:h-[100%] sm:bg-white"></div>
+        <hr class="border-[1.5px] sm:hidden" />
+        <div>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Gravity:{{ hw.gravity }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Terrain:{{ hw.terrain }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Surface_water:{{ hw.surface_water }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Population:{{ hw.population }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex justify-center md:justify-end m-5 sm:mt-[30px]">
+    <div
+      *ngIf="residentData && residentData.length > 0"
+      class="animate-fade-left animate-duration-[2000ms] flex flex-col items-center border-2 border-white p-[10px] rounded-xl w-[350px] sm:w-[600px] sm:h-[400px] sm:flex-row sm:justify-evenly sm:flex-wrap md:h-[300px] md:w-[700px] xl:w-[800px] 4xl:w-[1000px] 16xl:w-[1500px]"
+    >
+      <h1
+        class="text-white font-bold text-2xl sm:mr-[400px] xl:mr-[500px] xl:mr-[700px] 16xl:mr-[1200px] 16xl:text-3xl"
+      >
+        Residents:
+      </h1>
+
+      <div
+        class="w-[200px] mt-[20px] animate-fade-left animate-duration-[2000ms] sm:mt-[10px] 16xl:text-2xl 16xl:w-[250px]"
+        *ngFor="let resident of residentData"
+      >
+        <h1 class="text-white text-1xl text-center">
+          Name:{{ resident.name }}
+        </h1>
+        <hr />
+      </div>
+    </div>
+    <div
+      *ngIf="residentData && residentData.length === 0"
+      class="mt-[100px] text-white animate-fade-left animate-duration-[2000ms] flex flex-col items-center border-2 border-white p-[10px] rounded-xl w-[350px] sm:w-[600px] sm:h-[400px] sm:flex-row sm:justify-evenly sm:flex-wrap md:h-[300px] md:w-[700px] xl:w-[800px] 4xl:w-[1000px] 16xl:w-[1500px]"
+    >
+      No residents for this planet.
+    </div>
+  </section>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

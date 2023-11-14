@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    /* background-color: #0B0C10; */
+    font-family: sans-serif;
+}
+
+
+body{
+    background-image: url('https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png');
+
+}
+
+#my-nav{
+    background-color:#0B0C10;
+  }

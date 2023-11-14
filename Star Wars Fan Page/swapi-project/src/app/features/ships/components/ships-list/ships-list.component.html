@@ -1,0 +1,86 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section class="mt-10">
+    <div class="flex justify-center items-center mb-[20px]">
+      <h1
+        class="text-white text-[19px] font-bold flex justify-center items-center sm:text-[24px] md:text-[28px] xl:text-[38px]"
+      >
+        Ships of the Star Wars Universe
+      </h1>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center p-5 md:p-10 xl:flex-row xl:justify-evenly"
+    >
+      <div class="xl:w-1/2 animate-fade-right animate-duration-[2000ms]">
+        <p
+          class="text-white text-1xl mb-10 md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          In a galaxy filled with adventure and conflict, the starships of Star
+          Wars are as iconic as the characters who pilot them. The "Ships"
+          section of our fan page is your gateway to explore the incredible
+          vessels that have played pivotal roles in the epic saga. From sleek
+          and swift starfighters to massive capital ships, the Star Wars
+          universe is a treasure trove of innovative and imaginative spacecraft.
+        </p>
+        <p
+          class="text-white text-1xl md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          Here, we celebrate the magnificent array of ships, from the Rebel
+          Alliance's X-wings to the Imperial Star Destroyers, and all the unique
+          and unforgettable vessels in between. Dive into the intricacies of
+          these engineering marvels, their histories, and the impact they've had
+          on the Star Wars narrative.
+        </p>
+      </div>
+      <div class="animate-fade-left animate-duration-[2000ms]">
+        <img
+          class="w-[300px] p-[20px] sm:w-[400px] lg:w-[450px] xl:w-[500px] 4xl:w-[700px]"
+          src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/08/10-best-star-wars-spaceships.jpg"
+          alt="img"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="mt-[800px] mb-[200px]">
+    <div class="p-5">
+      <h1 class="text-white text-2xl font-bold text-center sm:text-3xl">
+        Browse the Ships of The Star Wars World
+      </h1>
+    </div>
+    <div class="flex justify-center items-center mt-[20px]">
+      <input
+        class="text-white w-[300px] bg-transparent border-[1px] p-[10px] rounded-xl sm:w-[550px] lg:w-[700px] xl:p-[13px] 2xl:w-[900px] 8xl:w-[1200px]"
+        type="text"
+        (keyup)="filterShips(searchInput.value)"
+        #searchInput
+        placeholder="Search People"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <div class="flex flex-wrap justify-evenly items-center p-5 w-[1700px]">
+        <ng-container *ngFor="let ship of filteredShips; let i = index">
+          <app-ship-card [ship]="ship"></app-ship-card>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="mt-[20px] flex justify-center items-center">
+      <button
+        [disabled]="pageNumber === 1"
+        (click)="previousPage()"
+        class="previous"
+      >
+        Previous
+      </button>
+      <button [disabled]="pageNumber === 4" (click)="nextPage()" class="next">
+        Next
+      </button>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

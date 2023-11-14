@@ -1,0 +1,91 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section id="personCard" class="slide-in-left">
+    <div class="mt-[150px] flex justify-center md:justify-start m-5">
+      <div
+        *ngFor="let person of personData"
+        class="animate-fade-right animate-duration-[2000ms] flex flex-col justify-center border-2 border-white rounded-xl p-10 w-[350px] sm:w-[600px] sm:flex-row sm:justify-evenly lg:w-[700px] xl:w-[800px] 2xl:w-[1000px] 2xl:h-[250px] 16xl:w-[1500px] 16xl:h-[300px]"
+      >
+        <div>
+          <h1 class="text-white text-2xl 4xl:text-3xl font-bold">
+            Name:{{ person.name }}
+          </h1>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Gender:{{ person.gender }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Birth Year:{{ person.birth_year }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Height:{{ person.height }}cm
+          </p>
+          <p class="text-white text-1xl">Mass:{{ person.mass }}kg</p>
+        </div>
+        <div class="sm:w-[2px] sm:h-[100%] sm:bg-white"></div>
+        <hr class="border-[1.5px] sm:hidden" />
+        <div>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Hair Color:{{ person.hair_color }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Skin Color:{{ person.skin_color }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Eye Color:{{ person.eye_color }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Character created on:{{ person.created | date }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center md:justify-end m-5">
+      <div
+        *ngFor="let hw of homeWorldData"
+        class="animate-fade-left animate-duration-[2000ms] flex flex-col justify-center border-2 border-white rounded-xl p-10 w-[350px] sm:w-[600px] sm:flex-row sm:justify-evenly lg:w-[700px] xl:w-[800px] 2xl:w-[1000px] 2xl:h-[250px] 16xl:w-[1500px] 16xl:h-[300px]"
+      >
+        <div>
+          <h1 class="text-white text-2xl 4xl:text-3xl font-bold">Homeworld:</h1>
+
+          <h1 class="text-white font-bold text-1xl 4xl:text-2xl">
+            Name:{{ hw.name }}
+          </h1>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Rotation Period:{{ hw.rotation_period }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Orbital Period:{{ hw.orbital_period }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Diameter:{{ hw.diameter }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Climate:{{ hw.climate }}
+          </p>
+        </div>
+        <div class="sm:w-[2px] sm:h-[100%] sm:bg-white"></div>
+        <hr class="border-[1.5px] sm:hidden" />
+
+        <div>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Gravity:{{ hw.gravity }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Terrain:{{ hw.terrain }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Surface_water:{{ hw.surface_water }}
+          </p>
+          <p class="text-white text-1xl 4xl:text-2xl">
+            Population:{{ hw.population }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

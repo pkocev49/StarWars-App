@@ -1,0 +1,27 @@
+<section id="personCard" class="mt-20">
+  <div>
+    <div
+      #topSection
+      [@scrollAnimationTop]="stateTop"
+      class="flex flex-col justify-between rounded-xl items-center border-2 border-white p-10 w-[300px] h-[350px] mt-3"
+    >
+      <div>
+        <h1 class="text-white">
+          <b>Name:{{ ship.name }}</b>
+        </h1>
+        <hr />
+        <p class="text-white">Model:{{ ship.model }}</p>
+        <p class="text-white">Cost:{{ ship.cost_in_credits }}credits</p>
+        <p class="text-white">Length:{{ ship.length }}</p>
+        <p class="text-white">Max speed:{{ ship.max_atmosphering_speed }}</p>
+        <p class="text-white">Crew:{{ ship.crew }}</p>
+      </div>
+      <button
+        class="w-[100px] p-[3px] text-center border-[1.5px] rounded-[10px] text-white"
+        [routerLink]="['/ships', ship.url]"
+      >
+        More details
+      </button>
+    </div>
+  </div>
+</section>

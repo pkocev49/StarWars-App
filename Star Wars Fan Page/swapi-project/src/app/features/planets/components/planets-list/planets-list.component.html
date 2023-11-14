@@ -1,0 +1,87 @@
+<ng-container *ngIf="!isFetching; else loading">
+  <section class="mt-10">
+    <div class="flex justify-center items-center mb-[20px]">
+      <h1
+        class="text-white text-[19px] font-bold flex justify-center items-center sm:text-[24px] md:text-[28px] xl:text-[38px]"
+      >
+        Planets of the Star Wars Universe
+      </h1>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center p-5 md:p-10 xl:flex-row xl:justify-evenly"
+    >
+      <div class="xl:w-1/2 animate-fade-right animate-duration-[2000ms]">
+        <p
+          class="text-white text-1xl mb-10 md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          The Star Wars galaxy is a diverse and vibrant tapestry of planets and
+          celestial bodies, each with its own unique charm and significance. Our
+          "Planets" section is your portal to explore the captivating worlds
+          that serve as the backdrop for the epic battles, adventures, and
+          stories that have defined the Star Wars franchise. From the desert
+          sands of Tatooine to the lush forests of Endor, every planet in the
+          Star Wars universe has a story to tell.
+        </p>
+        <p
+          class="text-white text-1xl md:text-2xl xl:text-[20px] 4xl:text-[25px]"
+        >
+          Here, we celebrate the rich variety of environments, cultures, and
+          species that inhabit these worlds. Dive into the histories,
+          geographies, and distinctive features of each planet, and discover how
+          they have shaped the course of galactic events.
+        </p>
+      </div>
+      <div class="animate-fade-left animate-duration-[2000ms]">
+        <img
+          class="mt-[30px] w-[300px] p-[20px] xl:mt-0 sm:w-[400px] lg:w-[450px] xl:w-[500px] 4xl:w-[700px]"
+          src="https://reviewsyouread.files.wordpress.com/2021/03/10-more-star-wars-planets-as-countries.png"
+          alt="img"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="mt-[700px] mb-[200px]">
+    <div>
+      <h1 class="text-white text-2xl font-bold text-center sm:text-3xl">
+        Browse the Planets of The Star Wars World
+      </h1>
+    </div>
+    <div class="flex justify-center items-center mt-[20px]">
+      <input
+        class="text-white w-[300px] bg-transparent border-[1px] p-[10px] rounded-xl sm:w-[550px] lg:w-[700px] xl:p-[13px] 2xl:w-[900px] 8xl:w-[1200px]"
+        type="text"
+        (keyup)="filterPlanets(searchInput.value)"
+        #searchInput
+        placeholder="Search People"
+      />
+    </div>
+    <div class="flex justify-center items-center">
+      <div class="flex flex-wrap justify-evenly items-center p-5 w-[1700px]">
+        <app-planet-card
+          *ngFor="let planet of filteredPlanets"
+          [planet]="planet"
+        ></app-planet-card>
+      </div>
+    </div>
+
+    <div class="mt-[20px] flex justify-center items-center">
+      <button
+        [disabled]="pageNumber === 1"
+        (click)="previousPage()"
+        class="previous"
+      >
+        Previous
+      </button>
+      <button [disabled]="pageNumber === 6" (click)="nextPage()" class="next">
+        Next
+      </button>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+</ng-template>

@@ -1,0 +1,149 @@
+<section id="home">
+  <div
+    class="flex mt-[100px] flex-col items-center justify-center lg:flex-row lg:mt-[200px] lg:justify-evenly xl:justify-center xl:mr-0 xl:flex-row xl:justify-center xl:justify-evenly 16xl:justify-evenly 16xl:mt-[100px]"
+  >
+    <div class="animate-fade-right animate-duration-[2000ms]">
+      <img
+        class="sm:w-[500px] xsm:w-[300px] md:w-[500px] lg:w-[400px] xl:w-[450px] 2xl:w-[500px] 4xl:w-[600px] 8xl:w-[700px] 16xl:w-[700px]"
+        src="{{ imgUrl }}"
+        alt=""
+      />
+    </div>
+    <div class="animate-fade-left animate-duration-[2000ms]">
+      <img
+        class="sm:w-[500px] mt-[20px] xsm:w-[300px] md:w-[500px] lg:w-[400px] lg:mt-0 xl:w-[450px] xl:mt-0 2xl:w-[500px] 4xl:w-[600px] 8xl:w-[700px] 8xl:ml-[30px] 16xl:ml-0 16xl:w-[700px]"
+        src="{{ secondImgUrl }}"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+
+<section #topSection [@scrollAnimationTop]="stateTop" class="mt-[800px]">
+  <div class="flex justify-center items-center lg:mb-[50px]">
+    <a
+      class="text-white text-center text-1xl font-bold w-[200px] sm:text-3xl sm:w-[450px] lg:text-4xl lg:w-[550px] 4xl:text-5xl 4xl:w-[700px]"
+    >
+      Discover the Star Wars Universe
+    </a>
+  </div>
+
+  <div class="flex flex-col items-center lg-flex lg:flex-row lg:justify-evenly">
+    <p
+      class="text-white text-1xl w-[300px] w-[200px] mt-10 sm:w-[400px] sm:text-2xl 16xl:text-3xl"
+    >
+      Welcome to our Star Wars fan page, where you can delve deeper into the
+      epic and timeless galaxy far, far away. Uncover the rich tapestry of
+      stories, characters, and worlds that have captivated audiences for
+      generations. Whether you're a Jedi Master or a Sith Lord, a Rebel Alliance
+      sympathizer or an Imperial loyalist, there's something for every Star Wars
+      enthusiast here.
+    </p>
+
+    <div>
+      <img
+        class="mt-[40px] w-[250px] sm:w-[400px] lg:w-[500px] 2xl:w-[600px] 4xl:w-[700px]"
+        src="https://images.bauerhosting.com/legacy/media/5ddc/ffc7/0a4e/c494/e8f7/62f2/star-wars-rise-skywalker-kylo-rey.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80"
+        alt="img"
+      />
+    </div>
+  </div>
+</section>
+
+<section
+  #topSectionTwo
+  [@scrollAnimationTopTwo]="stateTopTwo"
+  class="mt-[500px] mb-[200px]"
+>
+  <div class="flex justify-center lg:mb-[50px]">
+    <a
+      routerLink="/people"
+      class="text-white text-1xl font-bold w-[200px] sm:text-3xl sm:w-[400px] lg:text-4xl lg:w-[500px] 4xl:text-5xl 4xl:w-[600px]"
+    >
+      Explore Iconic Characters
+    </a>
+  </div>
+
+  <div
+    class="flex flex-col items-center lg-flex lg:flex-row lg:flex-row-reverse lg:justify-evenly"
+  >
+    <p
+      class="text-white text-1xl w-[300px] w-[200px] mt-10 sm:w-[400px] sm:text-2xl 16xl:text-3xl"
+    >
+      Meet the legendary heroes and formidable villains who have become
+      household names. From Luke Skywalker's journey from a farm boy to a Jedi
+      Knight, to the enigmatic allure of Darth Vader, and the wise words of
+      Yoda, we'll introduce you to the unforgettable characters that define the
+      Star Wars saga.
+    </p>
+
+    <div>
+      <img
+        class="mt-[40px] w-[250px] sm:w-[400px] lg:w-[500px] 2xl:w-[600px] 4xl:w-[700px]"
+        src="https://cdn.shopify.com/s/files/1/1779/2423/files/cover_6216277b-d94f-4064-b9c3-5b1b59a61665.png?v=1676294822"
+        alt="img"
+      />
+    </div>
+  </div>
+</section>
+<section
+  #topSectionThree
+  [@scrollAnimationTopThree]="stateTopThree"
+  class="mt-[500px] mb-[200px]"
+>
+  <div class="flex justify-center lg:mb-[50px]">
+    <a
+      routerLink="/ships"
+      class="text-white text-1xl w-[300px] font-bold sm:text-3xl sm:w-[600px] lg:text-4xl lg:w-[700px] 4xl:text-5xl 4xl:w-[900px]"
+    >
+      Learn About Iconic Ships and Vehicles
+    </a>
+  </div>
+
+  <div class="flex flex-col items-center lg-flex lg:flex-row lg:justify-evenly">
+    <p
+      class="text-white text-1xl w-[300px] w-[200px] mt-10 sm:w-[400px] sm:text-2xl 16xl:text-3xl"
+    >
+      Step inside the cockpits of iconic starfighters and spacecraft, from the
+      agile X-Wing to the menacing TIE Fighter. Discover the inner workings of
+      massive star destroyers and the mysterious secrets of the Millennium
+      Falcon. We'll take you on a journey through the galaxy's most famous and
+      fearsome vessels.
+    </p>
+
+    <div>
+      <img
+        class="mt-[40px] w-[250px] sm:w-[400px] lg:w-[500px] 2xl:w-[600px] 4xl:w-[700px]"
+        src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?w=1024"
+        alt="img"
+      />
+    </div>
+  </div>
+</section>
+<!-- <section class="mt-[800px]">
+  <div
+    #topSectionTwo
+    [@scrollAnimationTopTwo]="stateTopTwo"
+    class="p-[70px] flex justify-evenly"
+  >
+    <div>
+      <h1 class="text-white text-5xl">
+        <a routerLink="/ships">Learn About Iconic Ships and Vehicles</a>
+      </h1>
+      <p class="text-white text-2xl mt-10">
+        Step inside the cockpits of iconic starfighters and spacecraft, from the
+        agile X-Wing to the menacing TIE Fighter. Discover the inner workings of
+        massive star destroyers and the mysterious secrets of the Millennium
+        Falcon. We'll take you on a journey through the galaxy's most famous and
+        fearsome vessels.
+      </p>
+    </div>
+    <div>
+      <img
+        class="w-[1100px] rounded-[10px]"
+        src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?w=1024"
+        alt="img"
+      />
+    </div>
+  </div>
+</section> -->
